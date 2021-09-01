@@ -10,7 +10,7 @@ Allows business owners to view and manager departments, roles, and employees in 
 ## Installation
 Using node.js, run 'npm i' in your console to install dependancies. Run schema file, and return to your console and type 'node index.js' to start the application.
 ## Contributors
-Jack LeMasters
+Jackson LeMasters
 ## Repository
 - [Project Repo](github.com/jacklemasters/Employee-tracker)
 ## GitHub
