@@ -2,7 +2,6 @@ const mysql = require("mysql");
 const inquirer = require ("inquirer");
 const util = require ("util");
 const conTable = require("console.table");
-
 //Creating server connection to port 3306
 const connection = mysql.createConnection({
     host: 'localhost',
@@ -11,16 +10,12 @@ const connection = mysql.createConnection({
     password: 'password',
     database: 'employee_trackerDB',
 });
-
 //Connect to server with start function. 
 connection.connect((err) => {
     if (err) throw err;
     start()
 });
-
-
 const query = util.promisify(connection.query).bind(connection);
-
 //The start function is the initial prompt 
 const start = () => {
     inquirer.prompt({
@@ -75,8 +70,6 @@ const start = () => {
         }
     });
 };
-
-
 //Views all the existing departments
 const viewDept = () => {
     connection.query('SELECT * FROM department', (err, res) => {
@@ -88,8 +81,6 @@ const viewDept = () => {
     start();
 });
 }
-
-
 //Views all the existing employee roles
 const viewRole = () => {
     connection.query('SELECT * FROM Emp_Role', (err, res) => {
@@ -101,9 +92,6 @@ const viewRole = () => {
     start();
 });
 }
-
-
-
 //Views all the existing employees
 const viewEmp = async () => {
     const emp_Table = await query(
@@ -127,9 +115,6 @@ const viewEmp = async () => {
     console.table(emp_Table);
         start();
     };
-
-
-
 const addDept = () => {
     inquirer
     .prompt({
@@ -152,7 +137,6 @@ const addDept = () => {
         );
     });
 };
-
 //Add a role
 const addRole = () => {
     inquirer
@@ -189,7 +173,6 @@ const addRole = () => {
         );
     });
 };
-
 //Add an employee
 const addEmp = () => {
     inquirer
@@ -216,7 +199,6 @@ const addEmp = () => {
         }
     ])
     .then((answer) => {
-
         connection.query(
             'INSERT INTO employee SET ?',
             {                
