@@ -1,5 +1,6 @@
 # **Employee Tracker**
 ## Description 
+An employee tracker built using MySQL. <br>
 Allows business owners to view and manager departments, roles, and employees in a given company, allows better organization of the business.
 ## Table of contents
 - [Description](#Description)
