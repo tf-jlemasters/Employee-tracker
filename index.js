@@ -21,7 +21,7 @@ const start = () => {
     inquirer.prompt({
         name: 'userOptions',
         type: 'list',
-        message: 'What would you like to do?',
+        message: 'Please select what would you like to do.',
         choices: [
             'Add Department',
             'Add Role', 
@@ -130,7 +130,7 @@ const addDept = () => {
         },
         (err) => {
             if (err) throw err;
-            console.log('Your Department was added successfully!');
+            console.log('Department added successfully!');
             //Restarts the application
             start();
         }
@@ -180,22 +180,22 @@ const addEmp = () => {
         {
         name: "firstName",
         type: "input",
-        message: "Please enter new Employee first name", 
+        message: "Please enter new Employee's first name", 
         },
         {
         name: "lastName",
         type: "input",
-        message: "Please enter new Employee last name",
+        message: "Please enter new Employee's last name",
         },
         {
         name: "roleId",
         type: "input",
-        message: "What is the ID for this employees current role?"
+        message: "What is the ID for this employee's current role?"
         },
         {
             name: "managerId",
             type: "input",
-            message: "What is the ID for this employees manager?"
+            message: "What is the ID for this employee's manager?"
         }
     ])
     .then((answer) => {
@@ -227,7 +227,7 @@ const update = () => {
         {
             name: 'newTitle',
             type: 'list',
-            message: 'What is this employees new role?',
+            message: `What is this employee's new role?`,
             choices: () => listRoles(),
         },
     ])
