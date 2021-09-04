@@ -40,6 +40,6 @@ VALUES
 INSERT INTO employee (first_name, last_name, role_id, manager_id)
 VALUES 
 ("Harry", "Potter", 2, 3),
-("Hermione", "Granger", 3 , 2),
+("Hermione", "Granger", 3 , 1),
 ("Ron", "Weasly", 4 , 1),
-("Neville", "Longbottom", 5 , 1);
+("Neville", "Longbottom", 5 , 4);
